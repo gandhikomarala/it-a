@@ -4,8 +4,8 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  root: 'apps/web',
-  publicDir: 'public',
+  root: path.resolve(__dirname, 'apps/web'),
+  publicDir: path.resolve(__dirname, 'apps/web/public'),
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'apps/web/src'),
@@ -22,7 +22,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../../dist/web',
+    outDir: path.resolve(__dirname, 'dist/web'),
     emptyOutDir: true,
   },
 });
