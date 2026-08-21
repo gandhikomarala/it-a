@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: churn-mlops-platform
+Version: 1.0.0
+Summary: Enterprise Customer Churn Prediction & MLOps Platform
+Author-email: MLOps Engineering Team <engineering@enterprise-mlops.io>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.110.0
+Requires-Dist: uvicorn[standard]>=0.28.0
+Requires-Dist: pydantic>=2.6.4
+Requires-Dist: pydantic-settings>=2.2.1
+Requires-Dist: sqlalchemy>=2.0.28
+Requires-Dist: asyncpg>=0.29.0
+Requires-Dist: psycopg2-binary>=2.9.9
+Requires-Dist: alembic>=1.13.1
+Requires-Dist: redis>=5.0.3
+Requires-Dist: celery>=5.3.6
+Requires-Dist: pandas>=2.2.1
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: scikit-learn>=1.4.1.post1
+Requires-Dist: lightgbm>=4.3.0
+Requires-Dist: shap>=0.45.0
+Requires-Dist: joblib>=1.3.2
+Requires-Dist: pyarrow>=15.0.0
+Requires-Dist: scipy>=1.12.0
+Requires-Dist: passlib[bcrypt]>=1.7.4
+Requires-Dist: bcrypt>=4.1.2
+Requires-Dist: python-jose[cryptography]>=3.3.0
+Requires-Dist: python-multipart>=0.0.9
+Requires-Dist: prometheus-client>=0.20.0
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: click>=8.1.7
+Requires-Dist: typer>=0.9.0
+Requires-Dist: rich>=13.7.1
+Requires-Dist: tabulate>=0.9.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.1.1; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23.5; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
+Requires-Dist: pytest-benchmark>=4.0.0; extra == "dev"
+Requires-Dist: pytest-mock>=3.12.0; extra == "dev"
+Requires-Dist: ruff>=0.3.2; extra == "dev"
+Requires-Dist: black>=24.2.0; extra == "dev"
+Requires-Dist: mypy>=1.9.0; extra == "dev"
+Requires-Dist: locust>=2.24.1; extra == "dev"
+Requires-Dist: factory-boy>=3.3.0; extra == "dev"
+Requires-Dist: faker>=24.2.0; extra == "dev"
+
+# Enterprise-Grade Customer Churn Prediction & MLOps Platform
+
+A production-style, modular, high-scale Customer Churn Prediction and MLOps Platform architected with Python, FastAPI, React, TypeScript, Scikit-learn, LightGBM, SHAP, PostgreSQL, Redis, Celery, Docker, and AWS.
+
+## Core Capabilities
+- **Automated Data Ingestion & Validation**: Multi-format parsing (CSV, Parquet, JSON), schema inspection, outlier detection, data quality scoring.
+- **Advanced Feature Engineering**: Domain-driven behavioral features (tenure dynamics, usage decay, support velocity, payment risk score, engagement index).
+- **Multi-Model Machine Learning Engine**: Logistic Regression, Random Forest, Gradient Boosting, LightGBM, Calibrated Ensembles.
+- **Explainable AI (XAI)**: SHAP-powered local factor attribution and global feature importance.
+- **Enterprise Model Registry & Deployment**: Immutable model versioning, artifact hashing, stage promotion, and zero-downtime rollback.
+- **Real-time & High-Throughput Batch Inference**: Sub-20ms single prediction API, streaming chunked batch processing via Celery.
+- **Statistical Data & Prediction Drift Monitoring**: Continuous PSI, KS-test, Chi-square test, and automated drift alerting.
+- **Automated Retraining Engine**: Configurable trigger policies with production comparison safeguards.
+- **Enterprise RBAC & Security**: 7-tier role-based access control, granular permission checks, Argon2 password hashing, JWT token rotation.
+- **Modern Observability**: Prometheus metrics exporter, Grafana dashboards, structured JSON logging.
+- **Developer & Ops Tooling**: `churnctl` CLI, Docker Compose orchestration, AWS Terraform/CloudFormation templates, and exhaustive tests.

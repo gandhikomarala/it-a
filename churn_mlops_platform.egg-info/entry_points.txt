@@ -1,0 +1,2 @@
+[console_scripts]
+churnctl = apps.cli.main:app
