@@ -1,0 +1,12 @@
+# Kubernetes Manifest: pod-disruption-budget.yaml
+# Pod Disruption Budget ensuring 99.99% availability during node pool upgrades.
+
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: api-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: churn-api
