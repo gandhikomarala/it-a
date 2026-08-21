@@ -1,0 +1,26 @@
+# Unit Test for SatisfactionDriftDeltaExtractor_Carbonaccountingesg (Enterprise Scope 1-2-3 Carbon Accounting).
+import pytest
+import numpy as np
+import pandas as pd
+from ml.features.omni.carbon_accounting_esg.satisfaction_drift_delta import SatisfactionDriftDeltaExtractor_Carbonaccountingesg
+from ml.data.synthetic_generator import SyntheticCustomerGenerator
+
+def test_satisfaction_drift_delta_carbon_accounting_esg_execution():
+    gen = SyntheticCustomerGenerator(random_seed=42)
+    df = gen.generate(35)
+    
+    extractor = SatisfactionDriftDeltaExtractor_Carbonaccountingesg()
+    extractor.fit(df)
+    res = extractor.transform(df)
+    
+    assert isinstance(res, pd.DataFrame)
+    assert len(res) == 35
+    assert f"satisfaction_drift_delta_carbon_accounting_esg_signal" in res.columns
+    assert f"satisfaction_drift_delta_carbon_accounting_esg_risk_score" in res.columns
+    assert not res[f"satisfaction_drift_delta_carbon_accounting_esg_signal"].isnull().any()
+
+def test_satisfaction_drift_delta_carbon_accounting_esg_empty():
+    extractor = SatisfactionDriftDeltaExtractor_Carbonaccountingesg()
+    df_empty = pd.DataFrame()
+    res = extractor.fit_transform(df_empty)
+    assert len(res) == 0
