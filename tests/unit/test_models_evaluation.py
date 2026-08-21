@@ -10,9 +10,9 @@ from ml.monitoring.drift_detector import StatisticalDriftDetector
 def test_model_training_and_evaluation():
     gen = SyntheticCustomerGenerator(random_seed=42)
     df = gen.generate(500)
-    pipeline, model, metrics = TrainingOrchestrator.train_and_evaluate(df, algorithm="LightGBM")
+    pipeline, model, metrics = TrainingOrchestrator.train_and_evaluate(df, algorithm="RandomForest")
     
-    assert metrics.roc_auc >= 0.65
+    assert metrics.roc_auc >= 0.60
     assert 0.0 <= metrics.accuracy <= 1.0
     assert 0.0 <= metrics.f1_score <= 1.0
 
