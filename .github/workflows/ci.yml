@@ -21,7 +21,7 @@ jobs:
       - name: Install Python Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest pytest-asyncio pandas numpy scikit-learn lightgbm scipy sqlalchemy pydantic pydantic-settings pyarrow email-validator joblib fastapi uvicorn redis
+          pip install pytest pytest-asyncio pandas numpy scikit-learn lightgbm scipy sqlalchemy pydantic pydantic-settings pyarrow email-validator joblib fastapi uvicorn redis python-jose passlib bcrypt cryptography
 
       - name: Run Core ML and Data Tests
         env:
